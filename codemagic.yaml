@@ -1,23 +1,17 @@
 workflows:
   android-workflow:
-    name: PulseDrop Build
+    name: PulseDrop Debug APK
     max_build_duration: 120
     instance_type: mac_mini_m1
     environment:
-      groups:
-        - keystore_credentials
       vars:
         PACKAGE_NAME: "com.pulsedrop.telemetry"
     scripts:
       - name: Set up local properties
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-      - name: Build Android APK
+      - name: Build installable debug APK
         script: |
-          ./gradlew assembleRelease
+          ./gradlew assembleDebug
     artifacts:
-      - app/build/outputs/apk/release/*.apk
-    publishing:
-      email:
-        recipients:
-          - your-email@example.com
+      - app/build/outputs/apk/debug/*.apk
