@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_description">PulseDrop accessibility service reads on-screen text for personal testing on your own device. Android will show a persistent warning when this is enabled. You can disable it at any time in Settings &gt; Accessibility.</string>
+</resources>
